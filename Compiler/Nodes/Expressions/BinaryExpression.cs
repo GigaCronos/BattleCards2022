@@ -11,4 +11,5 @@ public abstract class BinaryExpr :Expression
         else
         return false;
     }
+    public abstract bool CheckType(IContext context);
 }
