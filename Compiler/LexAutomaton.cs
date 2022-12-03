@@ -1,23 +1,23 @@
-using Compiler;
+namespace Compiler;
 public class LexAutomaton
 {
-    class AutNode
+    public class AutNode
     {
-        string Symbol;
-        Dictionary<char,AutNode> Edges;
-        AutNode()
+        public string ? Symbol;
+        public Dictionary<char,AutNode> Edges;
+        public AutNode()
         {
-            Edges=new Dictionary<string, AutNode>();
+            Edges=new Dictionary<char ,AutNode>();
         }
         public void Add(AutNode a,char b)
         {
-            Edges.Add(b.Symbol,a);
+            Edges.Add(b,a);
         }
     };
-    AutNode root;
-    LexAutomaton(){
+    public  AutNode root;
+    public LexAutomaton(){
         root=new AutNode();
-        foreach(var Str in Jerarchy)
+        foreach(var Str in Jerarquia.Jerarchy)
         {
             AutNode cur=root;
             foreach(var ch in Str.Key)

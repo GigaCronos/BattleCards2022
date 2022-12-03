@@ -1,5 +1,5 @@
 namespace Compiler;
 public abstract class Node
 {   
-    public abstract Validate(IContext context);
+    public abstract bool Validate(IContext context);
 }

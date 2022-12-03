@@ -1,37 +1,88 @@
-﻿namespace Compiler;
+namespace Compiler;
 public class Parser
-{   
-    public string[] Lexer(string Sinput){
-        string[] List=new List[];
-        bool QuotMark=false;
-        int last=0;
-        bool OpenVariable=false;
-        LexAutomaton Automaton=new LexAutomaton();
-        Automaton.AutNode CurNode=Automaton.root;
-        for(int i=0;i<Length(Sinput);i++)
+{
+    public Parse(List<string> Tokens)
+    {
+
+
+    }
+    public Expression ParseSimpleExpr(List<string> Tokens)
+    {
+        stack<tuple<Expression, string>> Ops = new stack<tuple<Expression, string>>();
+        int last = -1;
+        int parCount = 0;
+        bool isFun = false;
+        Expression CurExpr;
+        foreach (var s in Tokens)
         {
-            if(QuotMark==true){
-                if(Sinput[i]=='"' && Sinput[i-1]!='\\')
+            if (s == '(')
+            {
+                if (parCount == 0)
                 {
-                    QuotMark=false;
-                    List.Add(Sinput.Substring(last,i-last+1));
-                    continue;
+                    if (last == -1 || IsLetter(List[last][0]) || List[last][0] == '_')
+                    {
+                        isFun = false;
+                        last = IndexOf(s) + 1;
+                    }
+                    else
+                    {
+                        isFun = true;
+                    }
                 }
+                parCount++;
+                continue;
             }
-            if(Sinput[i]==';')
+            if (s == ')')
             {
-
+                parCount--;
+                if (parCount == 0)
+                {
+                    if (isFun)
+                    {
+                        CurExpr = ParseFunCall(SubList(last, IndexOf(s)));
+                    }
+                    else
+                    {
+                        CurExpr = ParseSimpleExpr(SubList(last, IndexOf(s) - 1));
+                    }
+                }
+                continue;
             }
-            if(Jerarchy.ContainsKey(Sinput[i]))
+            if (parCount != 0)
             {
-
+                continue;
             }
-            if(Sinput[i]==' ' || Sinput[i]=='\n' || Sinput=='\t')
+            if (Jerarquia.Jerarchy.Contains(s))
             {
+                if(s=="-")
+                {
 
+                    continue;    
+                }
+                Acople(Ops,s,CurExpr);            
+
+                continue;
             }
+            last=IndexOf(s);
+            CurExpr=ParseTerm(s);
 
         }
-    }
 
+    }
+    public FunCall ParseFunCall(List<string> Tokens)
+    {
+
+    }
+    public ParseTerm(string s)
+    {
+
+    }
+    public void Acople(List<tuple<Expression,string>> Ops,string s,Expression Expr)
+    {
+
+    }
+    public void Acople(List<tuple<Expression,string>> Ops,Expression Expr)
+    {
+
+    }
 }

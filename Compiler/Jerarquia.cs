@@ -1,7 +1,11 @@
-using Compiler;
-public Dictionary<string,int> Jerarchy=new Dictionary<string, int>{
+namespace Compiler;
+public static class Jerarquia{
+    public static Dictionary<string,int>  Jerarchy;
+    public static void precalc()
+    {
+    Jerarchy=new Dictionary<string, int>{
     {".",1},{"[",1},{"]",1},{"(",1},{")",1},
-    {"-",2},{"!",2},{"~",2},
+    {"!",2},{"~",2},
     {"*",3},{"/",3},{"%",3},
     {"+",4},{"-",4},
     {"<",5},{">",5},{"<=",5},{">=",5},
@@ -12,4 +16,8 @@ public Dictionary<string,int> Jerarchy=new Dictionary<string, int>{
     {"&&",10},
     {"||",11},
     {"=",12},{"+=",12},{"-=",12},{"*=",12},{"/=",12},{"%=",12},{"&=",12},{"|=",12},{"^=",12},
-};
+    {",",13},
+    };
+
+    }
+}
