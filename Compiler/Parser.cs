@@ -1,28 +1,29 @@
+using System.Collections.Generic;
 namespace Compiler;
 public class Parser
 {
-    public Parse(List<string> Tokens)
+    public void Parse(List<string> Tokens)
     {
-
-
+            
     }
     public Expression ParseSimpleExpr(List<string> Tokens)
     {
-        stack<tuple<Expression, string>> Ops = new stack<tuple<Expression, string>>();
+        Stack<Tuple<Expression, string>> Ops = new Stack<Tuple<Expression, string>>();
         int last = -1;
         int parCount = 0;
         bool isFun = false;
-        Expression CurExpr;
-        foreach (var s in Tokens)
+        Expression CurExpr=new SumExpr();
+        for(int i=0; i<Tokens.Count;i++)
         {
-            if (s == '(')
+            if (Tokens[i] == "(")
             {
                 if (parCount == 0)
                 {
-                    if (last == -1 || IsLetter(List[last][0]) || List[last][0] == '_')
+                    string x = "a";
+                    if (last == -1 || char.IsLetter(Tokens[last][0]) || Tokens[last][0] == '_')
                     {
                         isFun = false;
-                        last = IndexOf(s) + 1;
+                        last = i + 1;
                     }
                     else
                     {
@@ -32,18 +33,19 @@ public class Parser
                 parCount++;
                 continue;
             }
-            if (s == ')')
+            if (Tokens[i] == ")")
             {
                 parCount--;
                 if (parCount == 0)
                 {
                     if (isFun)
                     {
-                        CurExpr = ParseFunCall(SubList(last, IndexOf(s)));
+                        CurExpr = ParseFunCall(SubList(Tokens,last, i));
                     }
                     else
                     {
-                        CurExpr = ParseSimpleExpr(SubList(last, IndexOf(s) - 1));
+                        
+                        CurExpr = ParseSimpleExpr(SubList(Tokens,last,i - 1));
                     }
                 }
                 continue;
@@ -52,37 +54,74 @@ public class Parser
             {
                 continue;
             }
-            if (Jerarquia.Jerarchy.Contains(s))
+            if (Jerarquia.Jerarchy.ContainsKey(Tokens[i]))
             {
-                if(s=="-")
+                if(Tokens[i]=="-")
                 {
 
                     continue;    
                 }
-                Acople(Ops,s,CurExpr);            
+                Acople(Ops,Tokens[i],CurExpr);            
 
                 continue;
             }
-            last=IndexOf(s);
-            CurExpr=ParseTerm(s);
+            last=i;
+            CurExpr=ParseTerm(Tokens[i]);
 
         }
-
+        return null;
+    }
+    public List<string> SubList(List<string> Tokens,int ini,int last){
+        return Tokens;
     }
     public FunCall ParseFunCall(List<string> Tokens)
     {
-
+            return null;
     }
-    public ParseTerm(string s)
+    public Expression ParseTerm(string s)
     {
-
+            return null;
     }
-    public void Acople(List<tuple<Expression,string>> Ops,string s,Expression Expr)
+    public void Acople(Stack<Tuple<Expression,string>> Ops,string s,Expression Expr)
     {
-
+            
     }
-    public void Acople(List<tuple<Expression,string>> Ops,Expression Expr)
+    public void Acople(Stack<Tuple<Expression,string>> Ops,Expression Expr)
     {
-
+            
+    }
+    public BinaryExpr Pa(string Symbol)
+    {   
+        BinaryExpr Ans=new SumExpr();
+        switch (Symbol)
+        {
+            case "*":Ans=new MultExpr();break;
+            case "/":Ans=new DivExpr();break;
+            case "%":Ans=new ModExpr();break;
+            case "+":Ans=new SumExpr();break;
+            case "-":Ans=new RestExpr();break;
+            case "<":Ans=new BLessExpr();break;
+            case ">":Ans=new BGreatExpr();break;
+            case "<=":Ans=new BLessOrEqualExpr();break;
+            case ">=":Ans=new BGreatOrEqualExpr();break;
+            case "==":Ans=new BEqualExpr();break;
+            case "!=":Ans=new BNotEqualExpr();break;
+            case "&":Ans=new AndExpr();break;
+            case "^":Ans=new XorExpr();break;
+            case "|":Ans=new OrExpr();break;
+            case "&&":Ans=new BAndExpr();break;
+            case "||":Ans=new BOrExpr();break;
+            case "=":Ans=new AssignExpr(null);break;
+            case "+=":Ans=new AssignExpr("+");break;
+            case "-=":Ans=new AssignExpr("-");break;
+            case "*=":Ans=new AssignExpr("*");break;
+            case "/=":Ans=new AssignExpr("/");break;
+            case "%=":Ans=new AssignExpr("%");break;
+            case "&=":Ans=new AssignExpr("&");break;
+            case "|=":Ans=new AssignExpr("|");break;
+            case "^=":Ans=new AssignExpr("^");break;
+            default:break;
+        }
+        return Ans;
     }
 }

@@ -1,7 +1,6 @@
 namespace Compiler;
 public abstract class BinaryExpr :Expression  
 {
-    public Operator Op;
     public Expression Left;
     public Expression Rigth;
     public override bool Validate(IContext context)
@@ -11,5 +10,8 @@ public abstract class BinaryExpr :Expression
         else
         return false;
     }
-    public abstract bool CheckType(IContext context);
+    public bool CheckType(IContext context)
+    {
+        return true;
+    }
 }
