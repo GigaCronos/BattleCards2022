@@ -1,6 +1,6 @@
 namespace Compiler;
 public static class Jerarquia{
-    public static Dictionary<string,int>  Jerarchy;
+    public static Dictionary<string,int> ? Jerarchy;
     public static void precalc()
     {
     Jerarchy=new Dictionary<string, int>{

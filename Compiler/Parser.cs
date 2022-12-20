@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using System;
+using Extensors;
 namespace Compiler;
 public class Parser
 {
@@ -12,14 +14,13 @@ public class Parser
         int last = -1;
         int parCount = 0;
         bool isFun = false;
-        Expression CurExpr=new SumExpr();
+        Expression CurExpr=null;
         for(int i=0; i<Tokens.Count;i++)
         {
             if (Tokens[i] == "(")
             {
                 if (parCount == 0)
                 {
-                    string x = "a";
                     if (last == -1 || char.IsLetter(Tokens[last][0]) || Tokens[last][0] == '_')
                     {
                         isFun = false;
@@ -40,12 +41,11 @@ public class Parser
                 {
                     if (isFun)
                     {
-                        CurExpr = ParseFunCall(SubList(Tokens,last, i));
+                        CurExpr = ParseFunCall(Tokens.SubList(last, i));
                     }
                     else
-                    {
-                        
-                        CurExpr = ParseSimpleExpr(SubList(Tokens,last,i - 1));
+                    {     
+                        CurExpr = ParseSimpleExpr(Tokens.SubList(last,i - 1));
                     }
                 }
                 continue;
@@ -71,16 +71,37 @@ public class Parser
         }
         return null;
     }
-    public List<string> SubList(List<string> Tokens,int ini,int last){
-        return Tokens;
-    }
     public FunCall ParseFunCall(List<string> Tokens)
     {
             return null;
     }
     public Expression ParseTerm(string s)
     {
-            return null;
+        if(s==null)
+        if(char.IsLetter(s[0]) || s[0]=='_'){
+           foreach(var d in s){
+               if(!(char.IsLetterOrDigit(d) || d=='_')){
+                   //Declarar Error
+               }
+           }
+           return new Variable(s); 
+        }
+        if(char.IsDigit(s[0])){
+            foreach(var d in s){
+               if(!char.IsDigit(d)){
+                   //Declarar Error
+               }
+           }
+           return new Number(s);
+        }
+        if(s[0]=='"'){
+            if(s[s.Length-1]!='"'){
+                //Declarar Error
+            }
+            return new StringNode(s.Substring(1,s.Length-2));
+        }
+        //Declarar error
+        throw new ArgumentException();
     }
     public void Acople(Stack<Tuple<Expression,string>> Ops,string s,Expression Expr)
     {
@@ -90,36 +111,36 @@ public class Parser
     {
             
     }
-    public BinaryExpr Pa(string Symbol)
+    public BinaryExpr CreateBinExpr(string Symbol)
     {   
-        BinaryExpr Ans=new SumExpr();
+        BinaryExpr Ans=null;
         switch (Symbol)
         {
-            case "*":Ans=new MultExpr();break;
-            case "/":Ans=new DivExpr();break;
-            case "%":Ans=new ModExpr();break;
-            case "+":Ans=new SumExpr();break;
-            case "-":Ans=new RestExpr();break;
-            case "<":Ans=new BLessExpr();break;
-            case ">":Ans=new BGreatExpr();break;
-            case "<=":Ans=new BLessOrEqualExpr();break;
-            case ">=":Ans=new BGreatOrEqualExpr();break;
-            case "==":Ans=new BEqualExpr();break;
-            case "!=":Ans=new BNotEqualExpr();break;
-            case "&":Ans=new AndExpr();break;
-            case "^":Ans=new XorExpr();break;
-            case "|":Ans=new OrExpr();break;
-            case "&&":Ans=new BAndExpr();break;
-            case "||":Ans=new BOrExpr();break;
-            case "=":Ans=new AssignExpr(null);break;
-            case "+=":Ans=new AssignExpr("+");break;
-            case "-=":Ans=new AssignExpr("-");break;
-            case "*=":Ans=new AssignExpr("*");break;
-            case "/=":Ans=new AssignExpr("/");break;
-            case "%=":Ans=new AssignExpr("%");break;
-            case "&=":Ans=new AssignExpr("&");break;
-            case "|=":Ans=new AssignExpr("|");break;
-            case "^=":Ans=new AssignExpr("^");break;
+            case "*":Ans=new MultExpr(null,null);break;
+            case "/":Ans=new DivExpr(null,null);break;
+            case "%":Ans=new ModExpr(null,null);break;
+            case "+":Ans=new SumExpr(null,null);break;
+            case "-":Ans=new RestExpr(null,null);break;
+            case "<":Ans=new BLessExpr(null,null);break;
+            case ">":Ans=new BGreatExpr(null,null);break;
+            case "<=":Ans=new BLessOrEqualExpr(null,null);break;
+            case ">=":Ans=new BGreatOrEqualExpr(null,null);break;
+            case "==":Ans=new BEqualExpr(null,null);break;
+            case "!=":Ans=new BNotEqualExpr(null,null);break;
+            case "&":Ans=new AndExpr(null,null);break;
+            case "^":Ans=new XorExpr(null,null);break;
+            case "|":Ans=new OrExpr(null,null);break;
+            case "&&":Ans=new BAndExpr(null,null);break;
+            case "||":Ans=new BOrExpr(null,null);break;
+            case "=":Ans=new AssignExpr(null,null,null);break;
+            case "+=":Ans=new AssignExpr("+",null,null);break;
+            case "-=":Ans=new AssignExpr("-",null,null);break;
+            case "*=":Ans=new AssignExpr("*",null,null);break;
+            case "/=":Ans=new AssignExpr("/",null,null);break;
+            case "%=":Ans=new AssignExpr("%",null,null);break;
+            case "&=":Ans=new AssignExpr("&",null,null);break;
+            case "|=":Ans=new AssignExpr("|",null,null);break;
+            case "^=":Ans=new AssignExpr("^",null,null);break;
             default:break;
         }
         return Ans;
