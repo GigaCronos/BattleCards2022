@@ -1,8 +1,8 @@
 namespace Compiler;
-public class Program:Node
+public class ComandBlock:CompExpression
 {   
-    public List<Statement> Statements;
-    public Program(List<Statement> L){
+    public List<Expression> Statements;
+    public ComandBlock(List<Expression> L){
         Statements=L;
     }
     public override bool Validate(IContext context)
@@ -14,6 +14,9 @@ public class Program:Node
                 return false;
             }
         }
+        return true;
+    }
+    public override bool CheckTypes(IContext context){
         return true;
     }
 }

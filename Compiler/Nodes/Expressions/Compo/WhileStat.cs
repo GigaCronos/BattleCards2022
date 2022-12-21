@@ -1,9 +1,9 @@
 namespace Compiler;
-public class IfStat:CompExpression
+public class WhileStat:CompExpression
 {
     public Expression Condition;
     public ComandBlock Body;
-    public IfStat(Expression C,ComandBlock B){
+    public WhileStat(Expression C,ComandBlock B){
         Condition=C;
         Body=B;
     }

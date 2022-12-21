@@ -3,6 +3,7 @@ public abstract class BinaryExpr :Expression
 {
     public Expression Left;
     public Expression Rigth;
+    public Type NodeType;
     public BinaryExpr(Expression a,Expression b)
     {
         Left=a;Rigth=b;
@@ -14,8 +15,7 @@ public abstract class BinaryExpr :Expression
         else
         return false;
     }
-    public bool CheckType(IContext context)
-    {
+    public override bool CheckTypes(IContext context){
         return true;
     }
 }

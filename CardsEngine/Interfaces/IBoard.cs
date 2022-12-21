@@ -5,5 +5,5 @@ public interface IBoard{
     IEnumerable<IMonsterCard> Player1Cards{get;}
     IEnumerable<IMonsterCard> Player2Cards{get;}
     IMonsterCard NextCard();
-    void AddNewCard(string s,int da,int h,int de,int ty);
+    void AddNewCard(string s,int da,int h,int de,int sp,int ty);
 }    

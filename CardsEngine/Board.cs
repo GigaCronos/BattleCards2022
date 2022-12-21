@@ -1,37 +1,38 @@
 using System.Collections.Generic;
+using Extensors;
 namespace CardsEngine;
 public class Board: IBoard
 {
     public List<IMonsterCard> Cards1;
     public List<IMonsterCard> Cards2;
-    public List<IMonsterCard> Heap;  
-    int k;
+    public OrderedList<int,IMonsterCard> Heap;
     public Board(){
         Cards1=new List<IMonsterCard>();
         Cards2=new List<IMonsterCard>();
-        Heap=new List<IMonsterCard>();
-        k=-1;
+        Heap=new OrderedList<int,IMonsterCard>( (q,p) => q<=p);
     }
-    public void AddNewCard(string s,int da,int h,int de,int ty)
+    public void AddNewCard(string s,int da,int h,int de,int sp,int ty)
     {
-        IMonsterCard card= new MonsterCard(s,da,h,de,ty);
+        IMonsterCard card= new MonsterCard(s,da,h,de,sp,ty);
         if(ty==1){
             Cards1.Add(card);
         }else{
             Cards2.Add(card);
         }
-        Heap.Add(card);
+        Heap.PushBack(new Tuple<int,IMonsterCard>(card.Speed,card));
         
     }
     public void Update(){
         
     }
     public IMonsterCard NextCard(){
-       k++;
-       if(k==Heap.Count){
-               k=0;
+        var A=Heap.Front();
+        Heap.Remove(0);
+        for(int i=0;i<Heap.Count;i++){
+            Heap[i]=new System.Tuple<int, IMonsterCard>(Heap[i].Item1-A.Item1,Heap[i].Item2);
         }
-        return Heap[k];
+        Heap.PushBack(new System.Tuple<int, IMonsterCard>(A.Item2.Speed,A.Item2));
+        return A.Item2;
     }
     public IEnumerable<IMonsterCard> Player1Cards{
         get{

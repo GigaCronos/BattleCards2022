@@ -11,4 +11,8 @@ public abstract class UnaryExpr: Expression
         else
         return false;
     }
+   public override bool CheckTypes(IContext context){
+        return true;
+    }
+
 }

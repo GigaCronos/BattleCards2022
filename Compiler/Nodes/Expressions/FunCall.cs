@@ -15,4 +15,8 @@ public class FunCall:Expression
         }
         return context.IsDefined(Identifier,Args.Count);
     }
+
+    public override bool CheckTypes(IContext context){
+        return true;
+    }
 }

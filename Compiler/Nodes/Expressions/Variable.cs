@@ -8,4 +8,7 @@ public class Variable:Expression{
     {
         return context.IsDefined(Identifier);
     }
+    public override bool CheckTypes(IContext context){
+        return true;
+    }
 }

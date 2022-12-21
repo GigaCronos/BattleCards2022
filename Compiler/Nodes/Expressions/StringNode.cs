@@ -8,4 +8,8 @@ public class StringNode:Expression{
     {
         return true;
     }
+    public override bool CheckTypes(IContext context)
+    {
+        throw new System.NotImplementedException();
+    }
 }

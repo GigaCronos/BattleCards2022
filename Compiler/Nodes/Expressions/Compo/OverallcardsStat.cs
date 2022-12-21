@@ -1,10 +1,8 @@
 namespace Compiler;
-public class IfStat:CompExpression
+public class OverallcardsStat:CompExpression
 {
-    public Expression Condition;
     public ComandBlock Body;
-    public IfStat(Expression C,ComandBlock B){
-        Condition=C;
+    public OverallcardsStat(ComandBlock B){
         Body=B;
     }
     public override bool Validate(IContext context){
