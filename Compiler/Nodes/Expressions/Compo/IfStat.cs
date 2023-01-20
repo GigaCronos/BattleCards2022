@@ -10,7 +10,9 @@ public class IfStat:CompExpression
     public override bool Validate(IContext context){
         return true;
     }
-    public override bool CheckTypes(IContext context){
-        return true;
+
+    public override string Run(IContext context){
+           return "0";
     }
+    
 }

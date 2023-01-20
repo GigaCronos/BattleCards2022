@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Extensors\Extensors.csproj"/>
+    <ProjectReference Include="..\Compiler\Compiler.csproj"/>
   </ItemGroup>  
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>

@@ -8,11 +8,8 @@ public abstract class UnaryExpr: Expression
         if(Left==null)return false;
         if(Left.Validate(context))
         return true;
-        else
+       
         return false;
-    }
-   public override bool CheckTypes(IContext context){
-        return true;
     }
 
 }

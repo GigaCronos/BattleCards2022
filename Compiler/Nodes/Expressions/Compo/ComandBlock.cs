@@ -16,7 +16,10 @@ public class ComandBlock:CompExpression
         }
         return true;
     }
-    public override bool CheckTypes(IContext context){
-        return true;
+    public override string Run(IContext context){
+        foreach(var St in Statements){
+            St.Run(context);
+        }
+        return "0";
     }
 }

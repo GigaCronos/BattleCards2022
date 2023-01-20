@@ -74,17 +74,17 @@ public class Parser
                     if(Expr[Expr.Count-1]!="}")throw new Exception("Expected }");
                     Li2.Add(new IfStat(ParseSimpleExpr(Expr.SubList(2,c1-1)),Parse(Expr.SubList(c1+2,Expr.Count-2))));
                 }break;
-                case "overallcards":{
+               /* case "return":{
                     int c1=1;
                     if(c1==Expr.Count-1)throw new Exception("Expected Bracket Enclosed Block after overallcards statememnt");
                     if(Expr[c1+1]!="{")throw new Exception("Expected Bracket Enclosed Block after overallcards statement");
                     if(Expr[Expr.Count-1]!="}")throw new Exception("Expected }");
                     Li2.Add(new OverallcardsStat(Parse(Expr.SubList(2,Expr.Count-2))));
-                }break;
+                }break;*/
                 case "int":{
                     if(Expr[Expr.Count-1]!=";")throw new Exception("No variable declaration containing Bracket Enclosed Block at "+Expr[1]);
                     if(IsAValidId(Expr[1])){
-                        Li2.Add(new DeclareVar("int",Expr[1]));
+                        Li2.Add(new DeclareVar(Expr[1]));
                         Li2.Add( ParseSimpleExpr(Expr.SubList(1,Expr.Count-2)));
                     }else{
                         throw new Exception("Not valid Variable name "+Expr[1]);
@@ -93,7 +93,7 @@ public class Parser
                 case "string":{
                     if(Expr[Expr.Count-1]!=";")throw new Exception("No variable declaration containing Bracket Enclosed Block at "+Expr[1]);
                     if(IsAValidId(Expr[1])){
-                        Li2.Add(new DeclareVar("string",Expr[1]));
+                        Li2.Add(new DeclareVar(Expr[1]));
                         Li2.Add(ParseSimpleExpr(Expr.SubList(1,Expr.Count-2)));
                     }else{
                         throw new Exception("Not valid Variable name "+Expr[1]);
@@ -225,15 +225,7 @@ public class Parser
             case "|":Ans=new OrExpr(a,b);break;
             case "&&":Ans=new BAndExpr(a,b);break;
             case "||":Ans=new BOrExpr(a,b);break;
-            case "=":Ans=new AssignExpr(null,a,b);break;
-            case "+=":Ans=new AssignExpr("+",a,b);break;
-            case "-=":Ans=new AssignExpr("-",a,b);break;
-            case "*=":Ans=new AssignExpr("*",a,b);break;
-            case "/=":Ans=new AssignExpr("/",a,b);break;
-            case "%=":Ans=new AssignExpr("%",a,b);break;
-            case "&=":Ans=new AssignExpr("&",a,b);break;
-            case "|=":Ans=new AssignExpr("|",a,b);break;
-            case "^=":Ans=new AssignExpr("^",a,b);break;
+            case "=":Ans=new AssignExpr((Variable)a,b);break;
             default:throw new Exception("Unidentified Error");
         }
         return Ans;

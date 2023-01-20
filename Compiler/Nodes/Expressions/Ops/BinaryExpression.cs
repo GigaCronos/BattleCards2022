@@ -15,7 +15,5 @@ public abstract class BinaryExpr :Expression
         else
         return false;
     }
-    public override bool CheckTypes(IContext context){
-        return true;
-    }
+      
 }

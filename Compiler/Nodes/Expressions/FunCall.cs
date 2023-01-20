@@ -16,7 +16,11 @@ public class FunCall:Expression
         return context.IsDefined(Identifier,Args.Count);
     }
 
-    public override bool CheckTypes(IContext context){
-        return true;
+    public override string Run(IContext context){
+           List<string> L=new List<string>();
+           foreach(var a in Args){
+            L.Add(a.Run(context));
+           }
+           return context.RunFunction(Identifier,L); 
     }
 }
