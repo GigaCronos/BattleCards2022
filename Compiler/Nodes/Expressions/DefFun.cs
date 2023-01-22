@@ -27,7 +27,7 @@ public class DefFun:Expression
         }
         C.Assign("return","0");
         Body.Run(C);
-        return context.GetVariable("return");
+        return C.GetVariable("return");
     }
 
     public override string Run(IContext context){

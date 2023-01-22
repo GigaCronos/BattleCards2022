@@ -2,13 +2,14 @@ using System.Collections.Generic;
 using System;
 using Extensors;
 namespace Compiler;
-public class Parser
+public static partial class Parser
 {
-    public ComandBlock Parse(List<string> Tokens)
+     //Esto Parsea un Bloque de Comandos
+    public static ComandBlock ParseBlock(List<string> Tokens)
     {
-        List<List<string>> Li=new List<List<string>>();
-        List<Expression> Li2=new List<Expression>();
-        int last=-1;
+        List<List<string>> Li=new List<List<string>>();//Lista de expresiones como List<strings>
+        List<Expression> Li2=new List<Expression>();//Lista de expresiones como Expression;
+        int last=0;
         int OpenBraquet=0;
         for(int i=0;i<Tokens.Count;i++){
             if(Tokens[i]=="{"){
@@ -17,11 +18,13 @@ public class Parser
             if(Tokens[i]=="}"){
                 OpenBraquet--;
                 if(OpenBraquet==0){
-                    Li.Add(Tokens.SubList(last+1,i));
+                    Li.Add(Tokens.SubList(last,i));
                 }
+                last=i+1;
             }
             if(OpenBraquet==0 && Tokens[i]==";"){
-                Li.Add(Tokens.SubList(last+1,i));
+                Li.Add(Tokens.SubList(last,i));
+                last=i+1;
             }
         }
         foreach(var Expr in Li){
@@ -48,7 +51,7 @@ public class Parser
                     if(c1==Expr.Count-1)throw new Exception("Expected Bracket Enclosed Block after )");
                     if(Expr[c1+1]!="{")throw new Exception("Expected Bracket Enclosed Block after )");
                     if(Expr[Expr.Count-1]!="}")throw new Exception("Expected }");
-                    Li2.Add(new WhileStat(ParseSimpleExpr(Expr.SubList(2,c1-1)),Parse(Expr.SubList(c1+2,Expr.Count-2))));
+                    Li2.Add(new WhileStat(ParseSimpleExpr(Expr.SubList(2,c1-1)),ParseBlock(Expr.SubList(c1+2,Expr.Count-2))));
                 }break;
                 case "if":{
                     int c1=-1;
@@ -72,7 +75,7 @@ public class Parser
                     if(c1==Expr.Count-1)throw new Exception("Expected Bracket Enclosed Block after )");
                     if(Expr[c1+1]!="{")throw new Exception("Expected Bracket Enclosed Block after )");
                     if(Expr[Expr.Count-1]!="}")throw new Exception("Expected }");
-                    Li2.Add(new IfStat(ParseSimpleExpr(Expr.SubList(2,c1-1)),Parse(Expr.SubList(c1+2,Expr.Count-2))));
+                    Li2.Add(new IfStat(ParseSimpleExpr(Expr.SubList(2,c1-1)),ParseBlock(Expr.SubList(c1+2,Expr.Count-2))));
                 }break;
                /* case "return":{
                     int c1=1;
@@ -101,14 +104,15 @@ public class Parser
                 }break;
                 default:{
                     if(Expr[Expr.Count-1]!=";")throw new Exception("No variable declaration containing Bracket Enclosed Block");
-                    Li2.Add(ParseSimpleExpr(Expr.SubList(1,Expr.Count-2)));
+                    Li2.Add(ParseSimpleExpr(Expr.SubList(0,Expr.Count-2)));
                 }break;
             }
         }
         return new ComandBlock(Li2);
     }
-    public Expression ParseSimpleExpr(List<string> Tokens)
+    public static Expression ParseSimpleExpr(List<string> Tokens)
     {
+
         if(Tokens.Count==1)
         return ParseTerm(Tokens[0]);
         int parCount = 0;
@@ -152,9 +156,10 @@ public class Parser
         if(Tokens[Tokens.Count-1]==")"){
             return ParseFuntionCall(Tokens);
         }
+       
         throw new Exception("Unidentified Error");
     }    
-    public FunCall ParseFuntionCall(List<string> Tokens)
+    public static FunCall ParseFuntionCall(List<string> Tokens)
     {
         string Id=Tokens[0];
         if(!IsAValidId(Id)){
@@ -164,7 +169,7 @@ public class Parser
             throw new Exception("Invalid Function Call "+Id);
         return new FunCall(Id,ParseSimpleExpressionsList(Tokens.SubList(2,Tokens.Count-2)));
     }
-    public List<Expression> ParseSimpleExpressionsList(List<string> Tokens){
+    public static List<Expression> ParseSimpleExpressionsList(List<string> Tokens){
         int parCount = 0;
         int last=-1;
         List<Expression> Li=new List<Expression>();
@@ -185,7 +190,7 @@ public class Parser
         }
         return Li;
     }
-    public Expression ParseTerm(string s)
+    public static Expression ParseTerm(string s)
     {
         if(s==null){
             throw new Exception("Unidentified Error");
@@ -204,7 +209,7 @@ public class Parser
         }
         throw new Exception("Invalid Character at "+s);
     }
-    public BinaryExpr CreateBinExpr(string Symbol,Expression a,Expression b)
+    public static BinaryExpr CreateBinExpr(string Symbol,Expression a,Expression b)
     {   
         BinaryExpr Ans=null;
         switch (Symbol)
@@ -230,18 +235,18 @@ public class Parser
         }
         return Ans;
     }
-    public UnaryExpr CreateUnExpr(string Symbol,Expression a){
+    public static UnaryExpr CreateUnExpr(string Symbol,Expression a){
         UnaryExpr Ans=null;
         switch (Symbol)
         {
             case "-":Ans=new NegativeExpr(a);break;
             case "!":Ans=new BNotExpr(a);break;
             case "~":Ans=new NotExpr(a);break;
-            default:throw new Exception("Unidentified Error");
+            default:{throw new Exception("Unidentified Error");}
         }
         return Ans;
     }
-    public bool IsAValidId(string s){
+    public static bool IsAValidId(string s){
         if(char.IsLetter(s[0]) || s[0]=='_'){
            foreach(var d in s){
                if(!(char.IsLetterOrDigit(d) || d=='_')){
@@ -252,7 +257,7 @@ public class Parser
         }
         return false;
     }
-    public bool IsANumber(string s){
+    public static bool IsANumber(string s){
          if(char.IsDigit(s[0])){
             foreach(var d in s){
                if(!char.IsDigit(d)){

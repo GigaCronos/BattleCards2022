@@ -8,4 +8,6 @@ public interface IContext
    public string GetVariable(string val);
    public void Assign(string var,string val);
    public IContext CreateChildContext();
+   public IEnumerable<string> GetFuns();
+   public IEnumerable<string> GetVars();
 }

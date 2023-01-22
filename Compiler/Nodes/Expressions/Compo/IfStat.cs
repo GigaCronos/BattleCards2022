@@ -8,11 +8,16 @@ public class IfStat:CompExpression
         Body=B;
     }
     public override bool Validate(IContext context){
-        return true;
+        IContext cur=context.CreateChildContext();
+        return (Condition.Validate(cur) && Body.Validate(cur));
     }
 
     public override string Run(IContext context){
-           return "0";
+        IContext cur=context.CreateChildContext();
+        if(Condition.Run(cur)!="0"){
+            Body.Run(cur);
+        }
+        return "0";
     }
     
 }

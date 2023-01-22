@@ -8,9 +8,14 @@ public class WhileStat:CompExpression
         Body=B;
     }
     public override bool Validate(IContext context){
-        return true;
+        IContext cur=context.CreateChildContext();
+        return (Condition.Validate(cur) && Body.Validate(cur));
     }
     public override string Run(IContext context){
+        IContext cur=context.CreateChildContext();
+        while(Condition.Run(cur)!="0"){
+            Body.Run(cur);
+        }
         return "0";
     }
 }

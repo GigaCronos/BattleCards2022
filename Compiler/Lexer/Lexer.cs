@@ -70,7 +70,7 @@ public static class Lexer
                 }
                 continue;
             }
-            if(Sinput[i]==' ' || Sinput[i]=='\n' || Sinput[i]=='\t')
+            if(Sinput[i]==' ' || Sinput[i]=='\n' || Sinput[i]=='\t' || Sinput[i]=='\r')
             {
                 if(OpenVariable)
                 {

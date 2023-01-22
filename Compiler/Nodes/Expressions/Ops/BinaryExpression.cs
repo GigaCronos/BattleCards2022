@@ -3,7 +3,6 @@ public abstract class BinaryExpr :Expression
 {
     public Expression Left;
     public Expression Rigth;
-    public Type NodeType;
     public BinaryExpr(Expression a,Expression b)
     {
         Left=a;Rigth=b;
