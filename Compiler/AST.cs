@@ -34,6 +34,8 @@ public class AST{
             }
     }
     public string RunFunction(string Name,List<string> Params){
+        System.Random rnd=new System.Random();
+        MainContext.Assign("Random",rnd.Next(0,100000).ToString());
         return MainContext.RunFunction(Name,Params);
     }
 }

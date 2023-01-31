@@ -112,7 +112,7 @@ public static partial class Parser
     }
     public static Expression ParseSimpleExpr(List<string> Tokens)
     {
-
+        //Parsea encontrando al token con menor jerarquia y dividiendo la expresion en dos
         if(Tokens.Count==1)
         return ParseTerm(Tokens[0]);
         int parCount = 0;
@@ -136,6 +136,15 @@ public static partial class Parser
                     best=i;
                 }
             }
+        }
+        if(parCount<0){
+            throw new Exception("Missing (,unbalanced chain ");
+        }
+        if(parCount>0){
+            throw new Exception("Missing ),unbalanced chain");
+        }
+        if(best==Tokens.Count-1 && Tokens[Tokens.Count-1]==")" && Tokens[0]=="("){
+            return ParseSimpleExpr(Tokens.SubList(1,Tokens.Count-2));
         }
         if(best==Tokens.Count-1)
         throw new Exception("Expected Variable or Number after "+Tokens[best]);
