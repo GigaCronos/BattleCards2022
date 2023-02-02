@@ -16,8 +16,11 @@ public class Context : IContext
     }
     public bool Define(string function,DefFun F)
     {
-        if(functions.ContainsKey(function))
-        return false;
+        if(functions.ContainsKey(function)){
+            functions[function]=F.Args.Count;
+            FunctionLib[function]=F;
+            return true;
+        }
         functions.Add(function,F.Args.Count);
         FunctionLib.Add(function,F);
         return true;
