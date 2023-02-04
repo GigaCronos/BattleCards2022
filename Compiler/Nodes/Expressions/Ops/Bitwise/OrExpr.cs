@@ -1,6 +1,6 @@
 namespace Compiler;
 public class OrExpr : BinaryExpr{
-
+        //BitWise Or
         public OrExpr(Expression a,Expression b):base(a,b){}
 
         public override string Run(IContext context){

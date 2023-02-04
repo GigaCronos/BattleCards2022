@@ -1,6 +1,6 @@
 namespace Compiler;
 public class MultExpr : BinaryExpr{
-        
+        //Multiplication
     public MultExpr(Expression a,Expression b):base(a,b){}
 
     public override string Run(IContext context){

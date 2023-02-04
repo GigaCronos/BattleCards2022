@@ -1,6 +1,7 @@
 namespace Compiler;
-public class LexAutomaton
+public class LexAutomaton//This automaton move over all possible symbols of the language
 {
+    //Automaton Node
     public class AutNode
     {
         public string ? Symbol;

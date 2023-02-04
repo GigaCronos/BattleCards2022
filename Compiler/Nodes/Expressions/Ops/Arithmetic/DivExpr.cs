@@ -1,5 +1,5 @@
 namespace Compiler;
-public class DivExpr : BinaryExpr{
+public class DivExpr : BinaryExpr{//Divission
         public DivExpr(Expression a,Expression b):base(a,b){}
 
         public override string Run(IContext context){

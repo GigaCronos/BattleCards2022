@@ -1,6 +1,7 @@
 namespace Compiler;
 public class BGreatOrEqualExpr : BinaryExpr
 {
+        //Boolean Great or Equal than >=
         public BGreatOrEqualExpr(Expression a,Expression b):base(a,b){}
 
         public override string Run(IContext context){

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 public class Context : IContext
 {
     IContext ? parent;
-    Dictionary<string,DefFun> FunctionLib=new Dictionary<string, DefFun>();
-    Dictionary<string,string> variables=new Dictionary<string, string>();
-    Dictionary<string,int> functions=new Dictionary<string,int>();
+    Dictionary<string,DefFun> FunctionLib=new Dictionary<string, DefFun>();//Identifier and Function Definition Expression
+    Dictionary<string,string> variables=new Dictionary<string, string>();//Variables with their respective Values
+    Dictionary<string,int> functions=new Dictionary<string,int>();//Functions Identifier with Arguments Count
     public bool IsDefined(string variable)
     {
         return variables.ContainsKey(variable) || (parent!=null && parent.IsDefined(variable));

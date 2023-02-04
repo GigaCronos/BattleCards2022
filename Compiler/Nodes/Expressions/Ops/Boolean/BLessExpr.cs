@@ -1,6 +1,7 @@
 namespace Compiler;
 public class BLessExpr : BinaryExpr
 {
+        //Boolean Less than <
         public BLessExpr(Expression a,Expression b):base(a,b){}
 
         public override string Run(IContext context){

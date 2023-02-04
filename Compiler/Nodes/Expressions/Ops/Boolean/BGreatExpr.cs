@@ -1,6 +1,7 @@
 namespace Compiler;
 public class BGreatExpr : BinaryExpr
 {
+        //Boolean Great than >
         public BGreatExpr(Expression a,Expression b):base(a,b){}
         public override string Run(IContext context){
                 int d1=Int32.Parse(Left.Run(context));

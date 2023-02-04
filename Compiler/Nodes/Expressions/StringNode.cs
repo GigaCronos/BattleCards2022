@@ -1,5 +1,6 @@
 namespace Compiler;
 public class StringNode:Expression{
+    //Not Implemented,Don't Use
     public string Str;
     public StringNode(string s){
         Str=s;

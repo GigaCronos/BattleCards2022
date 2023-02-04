@@ -1,5 +1,6 @@
 namespace Compiler;
-public static class Jerarquia{
+public static class Jerarchy{
+    //Jerarchy table for operators and symbols
     public static Dictionary<string,int> ? Jerarchy;
     public static void precalc()
     {

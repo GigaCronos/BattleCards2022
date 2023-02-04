@@ -5,7 +5,9 @@ public class AST{
     public List<DefFun> Actions;
     public List<AssignExpr> Properties;
     public IContext MainContext;
+    public bool Valid{get;private set;}
     public AST(string txt){
+            Valid=true;
             List<string> L;
             try
             {
@@ -13,9 +15,11 @@ public class AST{
             }
             catch (System.Exception)
             {
-                throw;
+                  Valid=false;  
+                  return;                
             } 
             MainContext=new Context();            
+            MainContext.Assign("Random","0");
             try{                
             (Actions,Properties)=Parser.Parse(L);
             foreach(var As in Properties){
@@ -30,15 +34,26 @@ public class AST{
             }
             }catch(System.Exception)
             {
-                throw;
+                Valid=false;
             }
     }
+    //Enumerates all the Functions just Names
+    public IEnumerable<string> GetFunctions(){
+        foreach(var Def in Actions){
+            yield return Def.Identifier;
+        }
+    }
+    //Run a Function Given Parameters as List<string>
     public string RunFunction(string Name,List<string> Params){
         System.Random rnd=new System.Random();
-        MainContext.Assign("Random",rnd.Next(0,100000).ToString());
+        int d=rnd.Next(0,100000);
+        MainContext.Assign("Random",d.ToString());
         try{
-        return MainContext.RunFunction(Name,Params);
+            string s=MainContext.RunFunction(Name,Params);
+            return s;
         }catch(System.Exception a){
+             if(Name=="Perform_Attack")
+            throw a;
             return "0";
         }
     }

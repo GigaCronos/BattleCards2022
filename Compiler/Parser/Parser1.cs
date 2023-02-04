@@ -4,11 +4,11 @@ using Extensors;
 namespace Compiler;
 public static partial class Parser
 {
-     //Esto Parsea un Bloque de Comandos
+     //This method Parses a Comand BLock
     public static ComandBlock ParseBlock(List<string> Tokens)
     {
-        List<List<string>> Li=new List<List<string>>();//Lista de expresiones como List<strings>
-        List<Expression> Li2=new List<Expression>();//Lista de expresiones como Expression;
+        List<List<string>> Li=new List<List<string>>();//Expressions List as List<strings>
+        List<Expression> Li2=new List<Expression>();//Expressions List as List<Expressions>;
         int last=0;
         int OpenBraquet=0;
         for(int i=0;i<Tokens.Count;i++){
@@ -19,8 +19,8 @@ public static partial class Parser
                 OpenBraquet--;
                 if(OpenBraquet==0){
                     Li.Add(Tokens.SubList(last,i));
+                    last=i+1;
                 }
-                last=i+1;
             }
             if(OpenBraquet==0 && Tokens[i]==";"){
                 Li.Add(Tokens.SubList(last,i));
@@ -77,13 +77,7 @@ public static partial class Parser
                     if(Expr[Expr.Count-1]!="}")throw new Exception("Expected }");
                     Li2.Add(new IfStat(ParseSimpleExpr(Expr.SubList(2,c1-1)),ParseBlock(Expr.SubList(c1+2,Expr.Count-2))));
                 }break;
-               /* case "return":{
-                    int c1=1;
-                    if(c1==Expr.Count-1)throw new Exception("Expected Bracket Enclosed Block after overallcards statememnt");
-                    if(Expr[c1+1]!="{")throw new Exception("Expected Bracket Enclosed Block after overallcards statement");
-                    if(Expr[Expr.Count-1]!="}")throw new Exception("Expected }");
-                    Li2.Add(new OverallcardsStat(Parse(Expr.SubList(2,Expr.Count-2))));
-                }break;*/
+
                 case "int":{
                     if(Expr[Expr.Count-1]!=";")throw new Exception("No variable declaration containing Bracket Enclosed Block at "+Expr[1]);
                     if(IsAValidId(Expr[1])){
@@ -103,16 +97,17 @@ public static partial class Parser
                     }
                 }break;
                 default:{
-                    if(Expr[Expr.Count-1]!=";")throw new Exception("No variable declaration containing Bracket Enclosed Block");
+                    if(Expr[Expr.Count-1]!=";")throw new Exception("No variable declaration containing Bracket Enclosed Block at "+Expr[0]);
                     Li2.Add(ParseSimpleExpr(Expr.SubList(0,Expr.Count-2)));
                 }break;
             }
         }
         return new ComandBlock(Li2);
     }
+    //Parsing a simple Expression
     public static Expression ParseSimpleExpr(List<string> Tokens)
     {
-        //Parsea encontrando al token con menor jerarquia y dividiendo la expresion en dos
+        //Top Down Parsing(Recursive Dividing)
         if(Tokens.Count==1)
         return ParseTerm(Tokens[0]);
         int parCount = 0;
@@ -168,6 +163,7 @@ public static partial class Parser
        
         throw new Exception("Unidentified Error");
     }    
+    
     public static FunCall ParseFuntionCall(List<string> Tokens)
     {
         string Id=Tokens[0];
@@ -178,6 +174,7 @@ public static partial class Parser
             throw new Exception("Invalid Function Call "+Id);
         return new FunCall(Id,ParseSimpleExpressionsList(Tokens.SubList(2,Tokens.Count-2)));
     }
+    //Parse an Expression list separed by ',' like... a+b,3,34+c
     public static List<Expression> ParseSimpleExpressionsList(List<string> Tokens){
         int parCount = 0;
         int last=-1;
@@ -199,6 +196,7 @@ public static partial class Parser
         }
         return Li;
     }
+    //Parse a Simple Term
     public static Expression ParseTerm(string s)
     {
         if(s==null){
@@ -218,6 +216,7 @@ public static partial class Parser
         }
         throw new Exception("Invalid Character at "+s);
     }
+    //Creates a Binary Expession Given two Expressions and a Symbol(opeartor)
     public static BinaryExpr CreateBinExpr(string Symbol,Expression a,Expression b)
     {   
         BinaryExpr Ans=null;
@@ -244,6 +243,7 @@ public static partial class Parser
         }
         return Ans;
     }
+    //Creates a Unary Expression
     public static UnaryExpr CreateUnExpr(string Symbol,Expression a){
         UnaryExpr Ans=null;
         switch (Symbol)
@@ -255,6 +255,7 @@ public static partial class Parser
         }
         return Ans;
     }
+    //Verifies if the string is valid for a variable or function Id
     public static bool IsAValidId(string s){
         if(char.IsLetter(s[0]) || s[0]=='_'){
            foreach(var d in s){

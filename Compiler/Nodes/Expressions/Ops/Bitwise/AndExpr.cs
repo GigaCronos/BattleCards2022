@@ -1,6 +1,6 @@
 namespace Compiler;
 public class AndExpr : BinaryExpr{
-        
+        //BitWise And
         public AndExpr(Expression a,Expression b):base(a,b){}
 
         public override string Run(IContext context){

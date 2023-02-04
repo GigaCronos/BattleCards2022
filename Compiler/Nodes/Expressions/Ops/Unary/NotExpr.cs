@@ -1,6 +1,7 @@
 namespace Compiler;
 public class NotExpr : UnaryExpr
 {
+        //Bitwise Not ~
         public NotExpr(Expression a):base(a){}                    
 
         public override string Run(IContext context){

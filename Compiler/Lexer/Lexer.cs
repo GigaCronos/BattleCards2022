@@ -1,6 +1,7 @@
 ﻿namespace Compiler;
 public static class Lexer
 {   
+    //Eliminates Empty Spaces
     public static List<string> Lex(string Sinput){
         List<string> List=new List<string>();
         bool QuotMark=false;

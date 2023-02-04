@@ -5,7 +5,7 @@ namespace Compiler;
 
 public static partial class Parser
 {
-
+    //Parse a Text in Function Definitions and Variable Declarations
     public static (List<DefFun>,List<AssignExpr>) Parse(List<string> Tokens)
     {
             List<DefFun> DF=new List<DefFun>();
@@ -31,6 +31,7 @@ public static partial class Parser
             return (DF,AE);
     }
 
+    //Parses a Funtion Definition
     public static DefFun ParseFunDef(List<string> Tokens)
     {
         string Identifier=Tokens[0];
@@ -56,7 +57,7 @@ public static partial class Parser
         
         return new DefFun(Identifier,Args,Body);       
     }
-
+    //Parse a Variable Declaration and Assignment;
     public static AssignExpr ParseAssign(List<string> Tokens){
         if(Tokens.Count==0){
             throw new Exception("Empty assignment");
