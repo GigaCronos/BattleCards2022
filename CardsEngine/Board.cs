@@ -50,11 +50,11 @@ public class Board: IBoard
         }   
         for(int i=0;i<Slots;i++){
             if(Cards[0][i]!=null && Cards[0][i].Health<0){
-                Log+=$"\n {Cards[i][0].Name} of Player1 has Died";
+                Log+=$"\n {Cards[0][i].Name} of Player1 has Died";
                 Cards[0][i]=null;
             }
             if(Cards[1][i]!=null && Cards[1][i].Health<0){
-                Log+=$"\n {Cards[i][0].Name} of Player2 has Died";
+                Log+=$"\n {Cards[1][i].Name} of Player2 has Died";
                 Cards[1][i]=null;
             }
         }
@@ -200,15 +200,15 @@ public class Board: IBoard
             }break;
             case "Buff":{
                 Cards[Pla-1][pos].Perform(action);    
-                Log="You feel Enlightened";
+                Log="You feel Enlightened "+Cards[Pla-1][pos].Name;
             }break;
             case "Buff1":{
                 Cards[Pla-1][pos].Perform(action);
-                Log="You feel Enlightened";
+                Log="You feel Enlightened "+Cards[Pla-1][pos].Name;
             }break;
             case "Buff2":{
                 Cards[Pla-1][pos].Perform(action);
-                Log="You feel Enlightened";
+                Log="You feel Enlightened "+Cards[Pla-1][pos].Name;
             }break;
             default:{
                 int D=Cards[Pla-1][pos].Perform(action);

@@ -1,4 +1,4 @@
-public interface IPlayer
+public interface IPlayerInterface
 {
     int PlayerNumber{get;}
     bool ChooseSlot();

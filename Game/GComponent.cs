@@ -7,6 +7,7 @@
 
     public GComponent(){
        Reset();
+       ForeGround=ConsoleColor.White;
     }
     
     public void DisplayMenu(IEnumerable<string> Args){
@@ -40,8 +41,6 @@
     private void Reset(){
         Display="";
         CounterAction=0;
-        BackGround=ConsoleColor.Black;
-        ForeGround=ConsoleColor.White;
     }
 
 

@@ -22,5 +22,4 @@ foreach(var a in di.GetDirectories()){
     C.AddCard(name,info,Base+cad);
 }
 GInterface Game=new GInterface(C);
-Game.CSlots=3;
 Game.Run();

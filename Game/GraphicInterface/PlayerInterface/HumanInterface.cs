@@ -1,8 +1,8 @@
-public class HumanInterface:IPlayer{
+public class HumanInterface:IPlayerInterface{
     public int PlayerNumber{get;set;}//[1,2]
-    string[] Slots;
-    public GComponent GComp;
-    private GInterface GInt{get;set;}
+    string[] Slots;// Slots for Cards
+    public GComponent GComp;//Graphic Component
+    private GInterface GInt{get;set;}//Main Graphic Interface
     public HumanInterface(int n,GComponent g,GInterface interf){
         PlayerNumber=n;
         GComp=g;
@@ -12,7 +12,7 @@ public class HumanInterface:IPlayer{
             Slots[i]="[Empty]";
         }
     }
-
+    //Menu for choosing Slot to fill 
     public bool ChooseSlot(){
         GComp.DisplayMessage("Choose an slot to fill Player"+$"{PlayerNumber}");
         GComp.DisplayMenu(Slots);
@@ -46,7 +46,7 @@ public class HumanInterface:IPlayer{
         if(IsFilled){
             if(n==GInt.CSlots)
                 return true;
-            if(n==7)
+            if(n==GInt.CSlots+1)
                 return false;
             return ChooseSlot();
         }else{
@@ -80,24 +80,23 @@ public class HumanInterface:IPlayer{
         }
         return ChooseCards();
     }
-    public bool CardChoosingMenu(string Name){
+    private bool CardChoosingMenu(string Name){
             GComp.DisplayMessage("Are you sure you want this Card?");
             GComp.DisplayMenu(new string[]{"Accept","CardInfo","Back"});
             GComp.Update();
             int n=GComp.GetEvent();
             switch(n){
-                case 0:return true;
-                break;
+                case 0:{return true;}
                 case 1:{
                     ShowCardInfo(Name);
                     return CardChoosingMenu(Name);
-                }break;
-                case 2:return false;
-                break;
+                }
+                case 2:{return false;}
+                
                 default: return CardChoosingMenu(Name);
             }
     }
-    public void ShowCardInfo(string Name){
+    private void ShowCardInfo(string Name){
             GComp.DisplayMessage(GInt.Catalogo.GetInfo(Name));
             GComp.DisplayMenu(new string[]{"Back"});
             GComp.Update();
@@ -105,6 +104,7 @@ public class HumanInterface:IPlayer{
             if(n!=0)
             ShowCardInfo(Name);
     }
+   //Add the Cards of this player to the Board
     public void AddCards(){
         foreach(var a in Slots){
             GInt.Tablero.AddNewCard(GInt.Catalogo.GetCard(a),PlayerNumber);

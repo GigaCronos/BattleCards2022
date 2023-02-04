@@ -10,8 +10,10 @@ public partial class GInterface{
             }
             R+=a.Name;
             R+="// Health:";R+=a.Health;
+            R+=" Mana: ";R+=a.Mana;
             R+=" Damage:";R+=a.Damage;
-            R+=" Armor:";R+=a.Defense;
+            R+=" Armor: ";R+=a.Defense;
+            R+=" Speed ";R+=a.Speed;
             R+="\n";
         }
         R+="\n";

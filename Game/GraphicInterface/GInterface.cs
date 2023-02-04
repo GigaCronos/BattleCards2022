@@ -4,11 +4,11 @@ public partial class GInterface{
     public IBoard Tablero{get;private set;}
     public ICatalog Catalogo{get;private set;}
     GComponent G;
-    IPlayer[] PlayerInterface;
+    IPlayerInterface[] PlayerInterface;
     public GInterface(ICatalog C){
         G=new GComponent();
         Catalogo=C;
-        PlayerInterface=new IPlayer[2];
+        PlayerInterface=new IPlayerInterface[2];
     }
     public void Run(){
         MainMenu();

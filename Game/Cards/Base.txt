@@ -31,6 +31,9 @@ Handle_Magic(D){
     }
 }
 Passive(){
+    MinDamage=MinDamage+3;
+    MaxDamage=MaxDamage+3;
+    Mana=Mana+30;
     return=0;
 }
 

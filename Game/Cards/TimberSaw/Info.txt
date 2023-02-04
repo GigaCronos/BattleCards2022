@@ -21,4 +21,4 @@ Skills:
 None
 
 Passive:
-None
+    Reactive Armor:EveryTime Timbersaw recieves Physical damage increase his armor by 30
