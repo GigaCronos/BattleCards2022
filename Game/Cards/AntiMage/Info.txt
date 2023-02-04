@@ -1,0 +1,24 @@
+AntiMage:
+Among the ascetic monks of Turstarkuri, only a young acolyte was fortunate enough 
+to escape the fallen legion's assault on the monastery. 
+Now, vowing to eliminate not only the magic of the Dead God, 
+the Anti-Mage returns to eradicate magic altogether. With sheer focus, 
+he Counters Spells thrown at him, returning them to their senders. 
+No wizard's trick is enough to contain or elude the Anti-Mage, as he Blinks out of any trap, 
+while at the same time being capable of sending a Fragments of himself to pursue targets in return. 
+With each swing of his unorthodox blades, the Anti-Mage steps closer to his goal of erradicating all magic, 
+Breaking apart Mana, setting up the depleted caster to perish in a crushing Mana Void.
+
+Stats:
+HealthPoints:620
+Armor:400
+Damage:53-57
+Speed:112
+Evasion:25
+Mana:219
+
+Skills
+None
+
+Passive
+None

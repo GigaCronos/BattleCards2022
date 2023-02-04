@@ -1,0 +1,22 @@
+Dragon Knigth:
+As Sir Davion slew Slyrak in arranged combat, the Eldwurm's blood mingled with his own,
+sealing their essences together. He was no longer a dragon-slayer, 
+but a Dragon Knight. The infusion of Dragon Blood caused his wounds to heal with inhuman speed, 
+and granted him great new powers. While nowhere as grand as Slyrak, 
+he found himself with the ability to Breathe Fire and launch Fireballs, immolating packs of foes at once. 
+But when Davion took on his Elder Dragon Form, he became the formidable Eldwurm itself, 
+and upon his awestruck enemies he rained projectiles of acid, fire, and ice.
+
+Stats:
+HealthPoints:620
+Armor:267
+Damage:55-61
+Speed:147
+Evasion:25
+Mana:291;
+
+Skills:
+None
+
+Passive:
+None

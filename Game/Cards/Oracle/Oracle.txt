@@ -1,0 +1,38 @@
+HealthPoints=600;
+Armor=350;
+MinDamage=39;
+MaxDamage=45;
+Speed=147;
+Evasion=25;
+Mana=387;
+
+MagicShield=0;
+
+Perform_Buff(){
+    MagicShield=MagicShield+1;
+}
+
+Perform_Heal(){
+    return=0;
+    if(Mana>=75){
+    return=160+20*MagicShield;
+    Mana=Mana-75;
+    }
+}
+
+Perform_PurifyingFlames(){
+    return=0;
+    if(Mana>=75){
+    Mana=Mana-75;
+    return=90+40*MagicShield;
+    }
+}
+
+Handle_Magic(D){
+    if(MagicShield==0){
+       HealthPoints=HealthPoints-D; 
+    }
+    if(MagicShield>0){
+        MagicShield=MagicShield-1;
+    }
+}

@@ -1,0 +1,21 @@
+Dazzle:
+A journey to the Nothl Realm changes all its visitors, not least of which Dazzle, 
+a young acolyte of the Dezun Order. Consecrated as a Shadow Priest, 
+Dazzle sends outs Shadow Waves to mend and maim. Foes are crippled by his paralytic enchantment — 
+the Poison Touch, while allies are blessed with Shallow Graves, cheating death no matter how severe 
+their injuries. As for himself, with each spell cast, each invocation of his strange Juju magic advances 
+the efficiency of his spell-casting. Enemies within earshot of his incantations feel their bodies weaken, 
+for those who cross Dazzle are invariably afflicted with an eternity of Bad Juju.
+
+Stats:
+HealthPoints:560
+Armor:333
+Damage:47-53
+Speed:140
+Evasion:25
+Mana:375
+
+Skills:
+    Heal:
+        Amount of Heal:135
+        Mana Cost:90

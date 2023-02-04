@@ -1,0 +1,25 @@
+Luna:
+Renouncing her savage past, Luna swore her service to Selemene, 
+and embraced the title of Moon Rider. The goddess bestows a Lunar Blessing on her new champion, 
+boosting her strength and heightening her nocturnal senses. Saddled on top of Nova, her beastly mount, 
+Luna bounds across the Nightsilver Woods to smite trespassers with a searing Lucent Beam. 
+Superior numbers are no advantage against the Moon Rider. Through divine will, 
+the midday sun gives way to night, and every foe is struck by rays of lunar energy as 
+Luna tears through their ranks with flying Moon Glaives. By Selemene's wrath or through her own hand, 
+the Moon Rider levels the battlefield under the brief darkness of the Eclipse.
+
+Stats:
+HealthPoints:620
+Armor:600
+Damage:50-56
+Speed:136
+Evasion:25
+Mana:351
+
+Skills:
+    LucentBeam: 
+        Damage:160
+        Mana Cost:100
+
+Passive:
+None        

@@ -1,0 +1,26 @@
+Juggernaut:
+What laid under the Juggernaut's mask, none could say. The last of his kind, 
+Yurnero carries alone the martial traditions of his native isle, now sunken forever beneath the waves. 
+Dancing with his Blade, the Juggernaut elevates swordplay to an art form, 
+Swiftly Slashing foes in an unstoppable Blade Fury, striking the most vulnerable spots. 
+With skills honed to such perfection, Yurnero can keep on Slashing and Dashing between opponents 
+while giving them absolutely no chance to retaliate even in the slightest. 
+Their only option to escape this onslaught is to book it as quickly as possible. 
+After eviscerating his foes, Yurnero places his portable mobile Healing Ward that emits 
+meditative energies to revitalize himself and nearby allies.
+
+Stats:
+HealthPoints:600
+Armor:567
+Damage:50-54
+Speed:97
+Evasion:25
+Mana:243
+
+Skills:
+None
+
+Passive:
+    Critical Hit:
+        Damage:200%
+        Chance:35%

@@ -1,0 +1,21 @@
+Sven:
+The Rogue Knight lives by two creeds: Honor, as ordained by his own personal code, 
+and Solitude. Always eager to charge into a fight. Using his iron gauntlet, 
+he launches a Storm Hammer, stunning grouped enemies as he transports himself into battle, 
+then closes in to cut them down with Great Cleave. Letting out a truly frightening Warcry, 
+he ignites and calls upon God's Strength, a few swings of his gargantuan sword are 
+often more than enough to slay on his hapless foes.
+
+Stats:
+HealthPoints:640
+Armor:350
+Damage:63-65
+Speed:144
+Evasion:25
+Mana:267
+
+Skills:
+None
+
+Passive
+None

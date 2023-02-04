@@ -1,0 +1,23 @@
+BristleBack:
+The enforcer at a local pub, Rigwarl's never failed to collect a tab. 
+That is, until he met one tough customer from the north. 
+For the first time in his life, Rigwarl felt the need to train. 
+His Thorny Back deters attacks while peppering foes with constant barrages of Quill Sprays. 
+From his nose he blows Thick Gobs of Snot, slowing and covering opponents in goo. 
+When it comes to a fight, he really puts his back into it. With every volley and every Sneeze, 
+Rigwarl works himself into a fury, adding rage to each blow as he goes on the Warpath in search of a rematch.
+
+Stats:
+HealthPoints:640;
+Armor:383
+Damage=52-58
+Speed:153
+Evasion:25
+Mana:243
+
+Skills:
+    Buff: 
+        Add +10 of Armor
+
+Passive:
+None

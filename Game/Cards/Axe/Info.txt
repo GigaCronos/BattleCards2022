@@ -1,0 +1,26 @@
+Axe:
+One by one the soldiers of the Red Mist fell, some in battle, 
+others to Mogul Khan's ambitions, until the self-declared general 
+found himself a commander without troops. "No matter", Axe thought,
+"For a one-man army is the best army of all." — Leaping into battle,
+Mogul Khan compels nearby foes to attack him with a taunting Berserker's Call.
+Absorbing blows from every direction, the indomitable Axe reacts by swinging
+his axe full circle in a Counter Helix, easily dispatching the swarm he had gathered. 
+But alas, not all stay long enough to meet their end. 
+The few limping away from Mogul Khan feel an inexplicable Battle Hunger, 
+a hunger never sated before Axe slams his Culling Blade through a weakened enemy, 
+sending them to an early grave. Axe, Axe is always charging onward.
+
+Stats:
+HealthPoints=700;
+Armor:233
+Damage:55-59
+Speed:140
+Evasion:25
+Mana:291
+
+Skills:
+None
+
+Passive:
+None

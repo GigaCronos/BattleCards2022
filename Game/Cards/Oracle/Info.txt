@@ -1,0 +1,31 @@
+Oracle:
+By carefully combining his intricate abilities, Oracle controls the destinies of both friend and foe. 
+Dispelling both boons and curses, Fortune's End comes sooner than expected. Fate's Edict shelters 
+heroes from magic, yet prevents them from raising arms. Purifying Flames stimulate regeneration, 
+but not without the initial pains of cleansing. The Rain of Destiny shrouds threatened allies 
+while causing harm to enemies. Knowledge of his abilities is key to utilize him as an ally at full potential; 
+while he can defy destiny with False Promise and snatch victory from the jaws of defeat, 
+one mistake can potentially seal the fate of his allies.
+
+Stats:
+HealthPoints:600
+Armor:350
+Damage:39-45
+Speed:147
+Evasion:25
+Mana:387
+
+Skills:
+    Buff:
+        Auments 1 to the Magic Shield Counter
+    Heal:
+        Heal Amount: 160 plus 20 times the Shield Counter
+        Mana Cost:75
+    PurifyingFlames
+        Damage:90 plus 40 times the ShieldCounter
+        Mana Cost:75
+Passive
+    ShieldCounter:
+        It Protects Oracle for Magic Incoming Damage and Amplify Magic Damage and Heal Amount
+        Every time Oracle recieves Magic Damage Reduce the counter by one and take no Damage                  
+        Initially 0

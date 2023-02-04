@@ -1,0 +1,22 @@
+Jakiro:
+Most Pyrexae Dragons are hatched with one head, attuned to either ice or fire. 
+Then there was Jakiro, an accident of nature. Possessing the might of both elements, 
+the twin-headed dragon's Dual Breath freezes and burns simultaneously. Gobs of Liquid Frost or Liquid Fire 
+adhere to armor and walls, melting down steel and stone alike. Retreating foes are blocked off with Ice Path, 
+giving Jakiro ample time to roast them on his Macropyre.
+
+Stats:
+HealthPoints:700
+Armor:267
+Damage:53-61
+Speed:147
+Evasion:25
+Mana:387
+
+Skills:
+    Dual Breath:
+        Damage:260
+        Mana Cost:140
+
+Passive
+None

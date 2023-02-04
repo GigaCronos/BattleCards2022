@@ -1,0 +1,23 @@
+Drow Ranger:
+Dwelling deep within the forest, few have ever caught glimpse of the solitary and impossibly beautiful Drow Ranger. 
+Her presence was known only from the chill of Frost Arrows, 
+driving deep into her enemies' hearts. Named and raised by the sympathetic Drow, 
+Traxex draws on her heritage to send forth a powerful Gust, 
+silencing and repulsing assailants who venture too close. Although normally aiming for precision, 
+Traxex does not shy away from unorthodox methods, launching a rapid salvo of ice-tipped arrows 
+at multiple targets at once. Honing her skill to peerless precision, 
+the Drow Ranger's legendary Marksmanship only improves with each passing skirmish.
+
+Stats:
+HealthPoints=520;
+Defense=333;
+Damage:49-56
+Speed=140;
+Evasion=25;
+Mana=255;
+
+Skills:
+None
+
+Passive:
+None

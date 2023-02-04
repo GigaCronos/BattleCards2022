@@ -1,0 +1,33 @@
+HealthPoints=560;
+Armor=233;
+MinDamage=44;
+MaxDamage=50;
+Speed=149;
+Evasion=25;
+Mana=255;
+
+BuffCounter=0;
+
+Perform_Buff(){
+    MinDamage=MinDamage+10;
+    MaxDamage=MaxDamage+10;
+    BuffCounter=BuffCounter+1;
+}
+
+Perform_Buff1(){
+    BuffCounter=BuffCounter+1;
+    Speed=Speed-3*Speed/100;
+}
+
+Perform_Buff2(){
+    BuffCounter=BuffCounter+1;
+    HealthPoints=HealthPoints+80;
+}
+
+Perform_SunStrike(){
+    return=0;
+    if(Mana>=175){
+    Mana=Mana-175;
+    return=120+20*BuffCounter;
+    }
+}

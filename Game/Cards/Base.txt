@@ -1,0 +1,54 @@
+HealthPoints=250;
+Armor=50;
+MinDamage=10;
+MaxDamage=20;
+Speed=250;
+Evasion=12;
+
+Perform_Attack(){
+    f=Random%(MaxDamage-MinDamage+1);
+    return=MinDamage+f;
+}
+Handle_Attack(D){
+    p=Random%100;
+    if(p>Evasion){
+        HealthPoints=HealthPoints-(D*100)/(100+Armor*5/100);
+    }
+    return=1;
+    if(HealthPoints<=0){
+        return=0;
+    }
+}
+Handle_Heal(L){
+    HealthPoints=HealthPoints+L;
+}
+
+Handle_Magic(D){
+    HealthPoints=HealthPoints-D;
+    return=1;
+    if(HealthPoints<=0){
+        return=0;
+    }
+}
+Passive(){
+    return=0;
+}
+
+GetHealth(){
+    return=HealthPoints;
+}
+GetSpeed(){
+    return=Speed;
+}
+GetDamage(){
+    return=(MinDamage+MaxDamage)/2;
+}
+GetDefense(){
+    return=Armor;
+}
+GetEvasion(){
+    return=Evasion;
+}
+GetMana(){
+    return=Mana;
+}

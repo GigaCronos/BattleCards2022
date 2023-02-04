@@ -1,0 +1,24 @@
+Timbersaw:
+Timbersaw had a good cause to be paranoid. Augury Bay fell to the walking trees, 
+its inhabitants crushed under branch and bough. But that was the past. 
+His new Saw-suit changed everything. Its long Timber Chain shot out, 
+grasping the nearest trunk and pulling the suit towards it. In an instant, 
+a dozen trees fell in a circle to the oversized saw. "Whirling Death, I'll call it!" 
+But that was not all. A press of the button, and the bladed Chakram flew into the forest, 
+cutting down even the sturdiest of hardwoods. Delirious with success, 
+Rizzrack pulled up a Second Chakram and a Flamethrower, spinning and spewing in all directions, 
+cackling until all that remained was a field of naked burned stumps. Now, he was ready to face his fears.
+
+Stats:
+HealthPoints:700
+Armor:267
+Damage:52-56
+Speed:147
+Evasion:25
+Mana:351
+
+Skills:
+None
+
+Passive:
+None

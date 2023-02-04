@@ -1,0 +1,15 @@
+HealthPoints=560;
+Armor=333;
+MinDamage=47;
+MaxDamge=53;
+Speed=140;
+Evasion=25;
+Mana=375;
+
+Perform_Heal(){
+    return=0;
+    if(Mana>=90){
+    return=135;
+    Mana=Mana-90;
+    }
+}

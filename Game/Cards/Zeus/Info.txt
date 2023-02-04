@@ -1,0 +1,22 @@
+Zeus:
+Charged with godly might, a Static Field constantly surrounds Zeus, making enemies more susceptible to his lightning.
+As the Lord of Heaven Jumping around, Zeus calls down Lightning Bolts to smite foes and reveal the surroundings, 
+sends Arc of Lightning through his nearest enemies, and calls forth a terrifying Nimbus upon his enemies 
+that repeatedly strikes enemies with Lightning Bolts. None can hide from Zeus, 
+pointing his arms skyward to bring divine punishment down on each and every foe. 
+Wherever they may be, none shall stand against the Thundergod's Wrath.
+
+Stats:
+HealthPoints:580
+Armor:383
+MinDamage:55
+MaxDamage:63
+Speed:153
+Evasion:25
+Mana:339
+
+Skills:
+None
+
+Passive:
+None

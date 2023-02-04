@@ -1,0 +1,11 @@
+HealthPoints=640;
+Armor=383;
+MinDamage=52;
+MaxDamage=58;
+Speed=153;
+Evasion=25;
+Mana=243;
+
+Perform_Buff(){
+    Armor=Armor+10;
+}

@@ -1,0 +1,15 @@
+HealthPoints=700;
+Armor=267;
+MinDamage=53;
+MaxDamage=61;
+Speed=147;
+Evasion=25;
+Mana=387;
+
+Perform_DualBreath(){
+    return=0;
+    if(Mana>=140){
+    return=250;
+    Mana=Mana-140;
+    }
+}

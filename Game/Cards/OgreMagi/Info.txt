@@ -1,0 +1,22 @@
+Ogre Magi
+Ogres were not known for their intelligence. Thankfully, a two-headed ogre is born once every generation, 
+a blessed individual whose combined brainpower puts him on par with the dullest of single-headed creatures. 
+What he lacks in wits, he makes up for with luck. The Ogre Magi possesses an innate chance to Multicast 
+each ability they cast, Ignite enemies to cinder, quashing enemies by doubling, tripling, 
+even quadrupling the damage from an Unrefined and simple Fireblast, boosting the power of his allies in a 
+frenzied Bloodlust or protecting them in Orbs of Fire. Of course, luck can be difficult to rely upon...
+
+Stats:
+HealthPoints:660
+Armor:633
+Damage:69-75
+Speed:149
+Evasion:25
+Mana:255
+
+Skills:
+    Fireblast:
+        Damage:150
+        Mana Cost:90
+        75%Chance of MultiCast(Doubling the Damage)
+

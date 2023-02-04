@@ -1,0 +1,23 @@
+HealthPoints=580;
+Armor=350;
+MinDamage=40;
+MaxDamage=46;
+Speed=133;
+Evasion=25;
+Mana=255;
+
+Perform_Attack(){
+    f=Random%(MaxDamage-MinDamage+1);
+    return=MinDamage+f;
+    if(Random%100<40){
+        return=return+110;
+    }
+}
+
+Perform_Assassinate(){
+    return=0;
+    if(Mana>=175){
+        return=320;
+        Mana=Mana-175;
+    }
+}

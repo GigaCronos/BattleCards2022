@@ -1,0 +1,24 @@
+Legion Commander:
+Renowned for her intrepid defense of Stonehall, the commander of the Bronze Legion 
+swore a brutal vengeance upon its Abyssal Invaders. The call of Tresdin's horn Heals, 
+Hastens and Inspires her soldiers. Faced with Overwhelming Odds, 
+the commander calls down a spread of arrows from the archers of Stonehall. 
+But above all, Tresdin relishes these one-on-one Duels. Locked in single combat, 
+and with a Moment of Courage, she counter-strikes instinctively, 
+slashing twice in the time her opponent takes to swing once. 
+With each victory claimed, the Legion Commander adds to her strength, 
+scaling her potential upwards without limit, until at last she can be a relentless one-woman army.
+
+Stats:
+HealthPoints:700
+Armor:300
+Damage:60-64
+Speed:144
+Evasion:25
+Mana:315
+
+Skills:
+None
+
+Passive:
+None

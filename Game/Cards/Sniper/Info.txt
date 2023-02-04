@@ -1,0 +1,27 @@
+Sniper:
+With a single bullet, Kardel Sharpeye pierced the steep-stalker's central eye from the valley floor, 
+an ominous act that resulted in his ritual exile. He would win acclaim on a field of battle, or never return. 
+Like his mountain kin, the Sniper is one with his firearm. He Takes Aim from great distances, and scores 
+Headshots that stop his targets dead. Armed with a modular rifle, 
+Kardel launches incendiary rounds to rain burning Shrapnel or throwing a 
+Grenade knocking back his enemies over entrenched positions. 
+No enemy is safe within the range of the Sniper's scope. As he pauses to line up his cross-hairs, 
+compensating for every variable before he Assassinates his mark in one fatal shot.
+
+Stats:
+HealthPoints:580
+Armor:350
+Damage:40-46
+Speed:133
+Evasion:25
+Mana:255
+
+Skills:
+    Assassinate:
+        Damage:320
+        Mana Cost:175
+
+Passive
+    Headshot:
+        40% Chance of dealing 110 aditional damage
+        

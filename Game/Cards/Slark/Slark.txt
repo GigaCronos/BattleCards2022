@@ -1,0 +1,15 @@
+HealthPoints=600;
+Armor=350;
+MinDamage=55;
+MaxDamage=61;
+Speed=120;
+Evasion=25;
+Mana=267;
+
+Perform_Attack(){
+    f=Random%(MaxDamage-MinDamage+1);
+    return=MinDamage+f;
+    HealthPoints=HealthPoints+20;
+    Mana=Mana+15;
+    Speed=Speed-3*Speed/100;
+}

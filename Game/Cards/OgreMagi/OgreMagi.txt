@@ -1,0 +1,26 @@
+HealthPoints=660;
+Armor=633;
+MinDamage=69;
+MaxDamage=75;
+Speed=149;
+Evasion=25;
+Mana=255;
+
+Perform_FireBlast(){
+    return=0;
+    if(Mana>=90){
+        return=150;
+        if(Random%100 < 75) {
+            return=return*2;
+        }       
+        Mana=Mana-90;
+    }
+}
+
+Perform_Buff(){
+    Speed=Speed-15;
+    if(Speed<35){
+    Speed=35;
+    }
+}
+

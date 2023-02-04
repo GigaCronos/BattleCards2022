@@ -1,0 +1,7 @@
+HealthPoints=520;
+Defense=333;
+MinDamage=49;
+MaxDamage=56;
+Speed=140;
+Evasion=25;
+Mana=255;

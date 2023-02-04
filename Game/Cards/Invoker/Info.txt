@@ -1,0 +1,33 @@
+Invoker:
+A competent wizard knows perhaps two spells; an exceptional one, three or four. Wielding the elements of Quas,
+Wex and Exort, the Invoker surpasses them all. Forging Spirits of ice and fire to melt away the armor of enemies 
+with great Alacrity while Snapping their heat-deprived cold bodies. 
+Conjuring an Ice Wall to stop foes in their paths before vanishing into thin air, 
+chilling nearby enemies like a Ghost Wandering through their ranks. 
+Lifting enemies off the ground with a Tornado that reaches through half the battlefield, 
+while charging up an Extractive Mana Pulse for the whirling foes to land into. 
+Pulling down a gigantic Meteor from space to crush enemies along a path while at the same time 
+unleashing a Deafening Blast to push them along meteor's path. And last but not least, 
+predicting enemy movement and using the Sun to Strike enemies from anywhere on the map.
+Whatever magic he chooses, one thing is certain: All shall come to bow before the Arsenal Magus.
+
+Stats:
+HealthPoints:560
+Armor:233
+Damage:44-50
+Speed:149
+Evasion:25
+Mana:255
+
+Skills:
+    Buff:
+        Gives 10 points of aditional MaxDamage
+    Buff1:
+        Reduces 3% the Attack Time
+    Buff2:
+        Gives 80 points of Health to him sealf
+    SunStrike
+        Damage: 120 Base Damage plus 20 times BuffCounter
+        ManaCost: 175
+Passive
+    BuffCounter:Initially zero,auments on 1 every time a Buff is Used    

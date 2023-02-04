@@ -1,0 +1,24 @@
+Slark:
+The only prisoner ever to escape from Dark Reef, Slark's abilities and ruthlessness are without equal. 
+Pouncing into danger then slipping back out is what Slark does best. With every swing of his barnacle 
+encrusted dagger, Slark steals his target's Essence, converting them to render himself more agile, 
+striking harder and faster. He forges a Dark Pact, sacrificing his own lifeblood to dissipate negative 
+energies that damage foes, and frees him from magical constraints. Concealing himself as he Dances 
+through the Shadows, the Nightcrawler presents no visible target to would-be attackers. 
+Hidden and Shrouded in this black haze, Slark escapes the inescapable and is always ready 
+to to gut his enemies with little risk of retribution.
+
+Stats:
+HealthPoints:600
+Armor:350
+Damage:55-61
+Speed:120
+Evasion:25
+Mana:267
+
+Skills:
+None
+
+Passive:
+    Every Time Slark attacks recieves 20 points of Health,15 points of Mana and Reduces his Attack Time by 3%
+     

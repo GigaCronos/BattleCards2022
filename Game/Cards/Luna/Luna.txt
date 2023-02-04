@@ -1,0 +1,15 @@
+HealthPoints=620;
+Armor=600;
+MinDamage=50;
+MaxDamage=56;
+Speed=136;
+Evasion=25;
+Mana=351;
+
+Perform_LucentBeam(){
+    return=0;
+    if(Mana>=100){
+    return=160;
+    Mana=Mana-100;
+    }
+}
