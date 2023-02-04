@@ -52,7 +52,7 @@ public static class Lexer
                 List.Add(""+Sinput[i]);
                 continue; 
             }
-            if(Jerarquia.Jerarchy.ContainsKey(""+Sinput[i]))
+            if(Jerarchy.JerarchyTab.ContainsKey(""+Sinput[i]))
             {
                 if(OpenVariable)
                 {

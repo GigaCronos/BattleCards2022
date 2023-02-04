@@ -1,10 +1,10 @@
 namespace Compiler;
 public static class Jerarchy{
     //Jerarchy table for operators and symbols
-    public static Dictionary<string,int> ? Jerarchy;
+    public static Dictionary<string,int> ? JerarchyTab;
     public static void precalc()
     {
-    Jerarchy=new Dictionary<string, int>{
+    JerarchyTab=new Dictionary<string, int>{
     {".",1},{"[",1},{"]",1},{"(",1},{")",1},
     {"!",2},{"~",2},
     {"*",3},{"/",3},{"%",3},

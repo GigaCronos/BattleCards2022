@@ -122,12 +122,12 @@ public static partial class Parser
             {
                 parCount--;
             }
-            if(parCount==0 && i!=0 && Tokens[i-1]!="(" && Jerarquia.Jerarchy.ContainsKey(Tokens[i]))
+            if(parCount==0 && i!=0 && Tokens[i-1]!="(" && Jerarchy.JerarchyTab.ContainsKey(Tokens[i]))
             {
                 if(best==-1){
                     best=i;
                 }
-                if(Jerarquia.Jerarchy[Tokens[best]]<=Jerarquia.Jerarchy[Tokens[i]]){
+                if(Jerarchy.JerarchyTab[Tokens[best]]<=Jerarchy.JerarchyTab[Tokens[i]]){
                     best=i;
                 }
             }
@@ -147,7 +147,7 @@ public static partial class Parser
             return CreateBinExpr(Tokens[best],ParseSimpleExpr(Tokens.SubList(0,best-1)),ParseSimpleExpr(Tokens.SubList(best+1,Tokens.Count-1)));
         }
 
-        if(Jerarquia.Jerarchy.ContainsKey(Tokens[0])){
+        if(Jerarchy.JerarchyTab.ContainsKey(Tokens[0])){
             return CreateUnExpr(Tokens[0],ParseSimpleExpr(Tokens.SubList(1,Tokens.Count-1)));
         }
 

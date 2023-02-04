@@ -18,7 +18,7 @@ public class LexAutomaton//This automaton move over all possible symbols of the 
     public  AutNode root;
     public LexAutomaton(){
         root=new AutNode();
-        foreach(var Str in Jerarquia.Jerarchy)
+        foreach(var Str in Jerarchy.JerarchyTab)
         {
             AutNode cur=root;
             foreach(var ch in Str.Key)
