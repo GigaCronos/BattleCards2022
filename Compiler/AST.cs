@@ -39,8 +39,8 @@ public class AST{
     }
     //Enumerates all the Functions just Names
     public IEnumerable<string> GetFunctions(){
-        foreach(var Def in Actions){
-            yield return Def.Identifier;
+        foreach(var id in MainContext.GetFuns()){
+            yield return id;
         }
     }
     //Run a Function Given Parameters as List<string>
