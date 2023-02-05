@@ -1,4 +1,5 @@
 using CardsEngine;
+using Extensors;
 public partial class GInterface{
     public void StartGameMenu(){
         G.DisplayMenu(new string[]{"StartGame","Back"});
@@ -33,7 +34,7 @@ public partial class GInterface{
         G.DisplayMessage(CampInfo());
         G.DisplayMessage(Tablero.Log);
         G.Update();
-        Wait(3500);
+        Utils.Wait(3500);
         if(d!=3)
         break;
         }

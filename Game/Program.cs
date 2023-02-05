@@ -1,5 +1,6 @@
 ﻿using CardsEngine;
 using System.IO;
+
 Compiler.Jerarchy.precalc();
 string path=Directory.GetCurrentDirectory();
 path=path+"\\Game\\Cards";
@@ -30,3 +31,4 @@ foreach(var a in di.GetDirectories()){
 }
 GInterface Game=new GInterface(C);
 Game.Run();
+

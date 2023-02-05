@@ -1,3 +1,4 @@
+using Extensors;
 public partial class GInterface{
 
     private void MainMenu(){
@@ -18,7 +19,7 @@ public partial class GInterface{
             case 2:{
                 G.DisplayMessage("Thanks for Playing with Us!");
                 G.Update();
-                Wait(2500);
+                Utils.Wait(2500);
                 Environment.Exit(0);
             }break;
             default:{

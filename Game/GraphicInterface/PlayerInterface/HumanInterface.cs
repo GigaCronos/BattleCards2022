@@ -1,3 +1,4 @@
+using Extensors;
 public class HumanInterface:IPlayerInterface{
     public int PlayerNumber{get;set;}//[1,2]
     string[] Slots;// Slots for Cards
@@ -36,7 +37,7 @@ public class HumanInterface:IPlayerInterface{
                 if(s==a){
                     GComp.DisplayMessage("This Card Has Been Chosen Already");
                     GComp.Update();
-                    GInt.Wait(2000);
+                    Utils.Wait(2000);
                     return ChooseSlot();
                 }
             }
@@ -67,7 +68,7 @@ public class HumanInterface:IPlayerInterface{
             if(!GInt.Catalogo.IsValid(GInt.Catalogo[n])){
                 GComp.DisplayMessage("This Card has some Errors, please fix them before playing");
                 GComp.Update();
-                GInt.Wait(2500);  
+                Utils.Wait(2500);  
                 return ChooseCards();
             }
             if(CardChoosingMenu(GInt.Catalogo[n]))    
@@ -110,7 +111,8 @@ public class HumanInterface:IPlayerInterface{
             GInt.Tablero.AddNewCard(GInt.Catalogo.GetCard(a),PlayerNumber);
         }
     }
-    public void NextTurn(int pos){
+    public void NextTurn(int pos)
+    {
         GComp.DisplayMessage(GInt.CampInfo());
         GComp.DisplayMessage($"Is your turn Player {PlayerNumber}! Your {Slots[pos]} is Ready!");
         List<string> actions=GInt.Tablero.Actions(pos,PlayerNumber);

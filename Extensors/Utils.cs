@@ -1,7 +1,7 @@
-using System Diagnostics;
-
-partial class GInterface{
-    public void Wait(int n){
+using System.Diagnostics;
+namespace Extensors;
+public static class Utils{
+    public static void Wait(int n){
     Stopwatch F=new Stopwatch();
     F.Start();
     long d=F.ElapsedMilliseconds;

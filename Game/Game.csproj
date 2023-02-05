@@ -1,10 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\Compiler\Compiler.csproj" />
+  <ProjectReference Include="..\Compiler\Compiler.csproj" />
     <ProjectReference Include="..\Extensors\Extensors.csproj"/>
     <ProjectReference Include="..\CardsEngine\CardsEngine.csproj"/>
-  </ItemGroup>
+    </ItemGroup>
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
