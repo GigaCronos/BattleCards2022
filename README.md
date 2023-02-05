@@ -1,5 +1,11 @@
 # BattleCards2022
-### Requeriments
+## Jugar
+Para correr el juego utilice en la consola el comando: 
+ ```
+    dotnet run --project Game
+```
+Desde la carpeta  BattleCards 2022
+### Requerimientos
     Dotnet 6.0
-### Recomendations 
-    Don't touch anything on "Cards" Folder Before reading the Report      
+### Recomendaciones 
+No toque nada en la carpeta "Cards" antes de leer el [Reporte](Report.md)  

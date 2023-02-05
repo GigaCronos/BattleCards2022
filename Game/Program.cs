@@ -9,7 +9,14 @@ ICatalog C= new Catalog();
 string Base=File.ReadAllText(path+"\\"+"base.txt");
 foreach(var a in di.GetDirectories()){
     string name=a.Name;
-    string cad=File.ReadAllText(path+"\\"+name+"\\"+name+".txt");
+   
+    string cad="";
+    try{
+    cad=File.ReadAllText(path+"\\"+name+"\\"+name+".txt");
+    }catch(System.Exception){
+        continue;
+    }
+    
     string info="No Info";
     try
     {

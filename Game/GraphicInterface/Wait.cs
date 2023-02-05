@@ -1,4 +1,5 @@
-using System.Diagnostics;
+using System Diagnostics;
+
 partial class GInterface{
     public void Wait(int n){
     Stopwatch F=new Stopwatch();

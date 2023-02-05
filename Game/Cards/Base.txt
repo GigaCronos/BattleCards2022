@@ -33,25 +33,26 @@ Handle_Magic(D){
 Passive(){
     MinDamage=MinDamage+3;
     MaxDamage=MaxDamage+3;
-    Mana=Mana+30;
+    Mana=Mana+10;
+    HealthPoints=HealthPoints+10;
     return=0;
 }
 
-GetHealth(){
+Get_Health(){
     return=HealthPoints;
 }
-GetSpeed(){
+Get_Speed(){
     return=Speed;
 }
-GetDamage(){
+Get_Damage(){
     return=(MinDamage+MaxDamage)/2;
 }
-GetDefense(){
+Get_Defense(){
     return=Armor;
 }
-GetEvasion(){
+Get_Evasion(){
     return=Evasion;
 }
-GetMana(){
+Get_Mana(){
     return=Mana;
 }

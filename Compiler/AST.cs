@@ -52,8 +52,6 @@ public class AST{
             string s=MainContext.RunFunction(Name,Params);
             return s;
         }catch(System.Exception a){
-             if(Name=="Perform_Attack")
-            throw a;
             return "0";
         }
     }

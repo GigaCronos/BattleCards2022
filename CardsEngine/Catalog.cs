@@ -34,7 +34,7 @@ public class Catalog:ICatalog{
         }
     }
     //Validates the sintaxis of the CardScript
-    public bool IsValid(string s){
+    public bool IsValid(string s){ 
         if(Cards.ContainsKey(s)){
             return Cards[s].Validate();
         }else{

@@ -8,7 +8,7 @@ public class Script
         Program=new AST(text);
     }    
     public int GetStat(string stat){
-        string s= Program.RunFunction("Get"+stat,new List<string>(){});
+        string s= Program.RunFunction("Get_"+stat,new List<string>(){});
         return Int32.Parse(s);
     }
 
